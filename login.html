@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Jejak Rasa Nusantara</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+  <div class="container">
+    <!-- Kotak LOGIN -->
+    <div class="login-box" id="login-box">
+      <a href="landingpage.html" class="close-btn">&times;</a>
+
+      <div class="profile-icon">
+        <img src="gambar/icon-user.svg" alt="User Icon">
+      </div>
+
+      <h2>Masuk Akun Anda</h2>
+
+      <form id="loginForm">
+        <input type="text" placeholder="Username" required class="custom-input" id="login-username">
+        <input type="password" placeholder="Password" required class="custom-input" id="login-password">
+        <button type="submit" class="yellow-button">MASUK</button>
+      </form>
+
+      <p class="switch-text">
+        Belum punya akun?
+        <a href="#" id="show-register" class="switch-link-yellow">Daftar sekarang!</a>
+      </p>
+    </div>
+
+    <!-- Kotak DAFTAR -->
+    <div class="login-box hidden" id="register-box">
+      <a href="#" id="back-to-login" class="close-btn">&times;</a>
+
+      <div class="profile-icon">
+        <img src="gambar/icon-user.svg" alt="User Icon">
+      </div>
+
+      <h2>Buat Akun Baru</h2>
+
+      <form id="registerForm">
+        <input type="text" placeholder="Username" required class="custom-input" id="reg-username">
+        <input type="password" placeholder="Password" required class="custom-input" id="reg-password">
+        <input type="password" placeholder="Konfirmasi Password" required class="custom-input" id="reg-confirm">
+        <button type="submit" class="yellow-button">DAFTAR</button>
+      </form>
+
+      <p class="switch-text">
+        Sudah punya akun?
+        <a href="#" id="back-login" class="switch-link-yellow">Login!</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="overlay hidden">
+    <div class="popup">
+      <h2 id="popup-title">✅</h2>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  <script>
+    const showRegister = document.getElementById('show-register');
+    const backLogin = document.getElementById('back-login');
+    const backToLogin = document.getElementById('back-to-login');
+    const loginBox = document.getElementById('login-box');
+    const registerBox = document.getElementById('register-box');
+    const popup = document.getElementById('popup');
+    const popupTitle = document.getElementById('popup-title');
+    const popupMsg = document.getElementById('popup-message');
+
+    let registeredUser = "";
+    let registeredPass = "";
+
+    // Pindah ke form daftar
+    showRegister.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginBox.classList.add('hidden');
+      registerBox.classList.remove('hidden');
+    });
+
+    // Kembali ke login
+    [backLogin, backToLogin].forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerBox.classList.add('hidden');
+        loginBox.classList.remove('hidden');
+      });
+    });
+
+    // Fungsi menampilkan popup
+    function showPopup(title, message, callback) {
+      popupTitle.textContent = title;
+      popupMsg.textContent = message;
+      popup.classList.remove('hidden');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        if (callback) callback();
+      }, 2000);
+    }
+
+    // Saat daftar
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('reg-username').value;
+      const pass = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('reg-confirm').value;
+
+      if (pass !== confirm) {
+        showPopup("❌ Gagal!", "Konfirmasi password tidak cocok.");
+        return;
+      }
+
+      registeredUser = username;
+      registeredPass = pass;
+
+      showPopup("✅ Berhasil!", "Berhasil. Silahkan login.", () => {
+        registerBox.classList.add('hidden');
+        loginBox.classList.remove('hidden');
+      });
+    });
+
+    // Saat login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('login-username').value;
+      const pass = document.getElementById('login-password').value;
+
+      if (user === registeredUser && pass === registeredPass) {
+        showPopup("✅ Login Berhasil!", "Selamat datang, " + user + "!", () => {
+          window.location.href = "landingpage.html";
+        });
+      } else {
+        showPopup("❌ Gagal!", "Username atau password salah!");
+      }
+    });
+  </script>
+
+</body>
+</html>

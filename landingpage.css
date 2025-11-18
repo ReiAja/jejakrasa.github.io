@@ -1,0 +1,422 @@
+  /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Mengatur font default menjadi Inter dan latar belakang */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+    }
+
+    /* Header styling */
+    .navbar {
+      
+      /* PENTING: UNTUK STICKY NAVBAR */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Warna Aksen Kuning (Amber-400) */
+        .accent-yellow {
+            background-color: #fbbf24;
+            color: #ffffff; /* Teks gelap di tombol kuning */
+        }
+        .text-accent-yellow {
+            color: #fbbf24;
+        }
+    
+    .navbar-light {
+            backdrop-filter: blur(10px); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        
+        }
+
+        .navbar-light a.active-link {
+            color: #fbbf24; /* Teks link aktif kuning */
+            border-bottom-color: #fbbf24;
+        }
+    /* Tombol Masuk */
+    .login-button button {
+      background-color: #fbbf24;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button button:hover {
+      background-color: #fbbf24;
+    }
+
+
+    .horizontal-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: #fff;
+      gap: 24px;
+    }
+
+    /* Logo dan teks di samping */
+    .logo-text-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    .text-stack {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .title-jejak {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f5a623;
+      margin: 0;
+    }
+
+    .title-nusantara {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #d94a38;
+      margin: 0;
+    }
+
+    /* Search styling */
+    .search-container {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background-color: #fff;
+    }
+
+    /* Menggunakan ikon Font Awesome */
+    .search-icon {
+      margin-right: 8px;
+      font-size: 1.2rem;
+      color: #888;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      width: 200px;
+    }
+
+    .search-button {
+      background-color: #f5a623;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+      background-color: #e6951f;
+    }
+
+
+    .food-section {
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .food-card {
+      position: relative;
+      height: 220px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .food-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .food-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 12px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* Food Box */
+    .food-box {
+      background: #faf3db;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    
+    /* --- KODE BARU UNTUK UKURAN KARTU SAMA --- */
+    .card {
+      display: flex;
+      background: rgb(255, 255, 255);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+      min-height: 460px; 
+    }
+
+    /* Class baru untuk layout cerminan (mirror) */
+    .reverse-card {
+      flex-direction: row-reverse;
+    }
+
+    .card img {
+      width: 40%; /* Gambar mengambil 40% */
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      width: 60%; /* Konten mengambil 60% */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* Responsiveness untuk Mobile: Stacking Image dan Content */
+    @media (max-width: 768px) {
+        .card, .reverse-card {
+            flex-direction: column; /* Semua kartu menumpuk di mobile */
+            min-height: unset; 
+        }
+        .card img, .card-content {
+            width: 100%; /* Gambar dan konten 100% lebar di mobile */
+            height: auto;
+        }
+        .card img {
+            height: 200px; /* Atur tinggi gambar di mobile */
+        }
+    }
+    /* --- AKHIR KODE BARU --- */
+
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      /* Bayangan lebih tebal */
+      transform: translateY(-5px);
+      /* Sedikit terangkat */
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .card h2 span {
+      color: #f6b300;
+    }
+
+    .card p {
+      margin: 15px 0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background-color: #f6b300;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #e09627;
+    }
+
+    /* Style untuk elemen select (dropdown) */
+    .custom-select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%234B5563'%3e%3cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1.5em;
+    }
+
+    .review-card-shadow {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(224, 224, 224, 0.8);
+    }
+
+    .star-rating {
+      color: #FFC107;
+    }
+
+    /* Phone Mockup Styling */
+    .phone-mockup {
+      width: 280px;
+      height: 500px;
+      background-color: #242424;
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .phone-screen {
+      background-color: white;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app-header {
+      padding: 8px 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .app-content {
+      width: 100%;
+      padding: 0 10px 10px 10px;
+    }
+
+    /* === FIX TOMBOL MASUK TIDAK BISA DIKLIK === */
+.login-button {
+  position: relative;
+  z-index: 9999;
+}
+
+.login-button button {
+  background-color: #f5a623;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 9999;
+}
+
+.login-button button:hover {
+  background-color: #ffbb33;
+}
+
+/* Pastikan header, section, dan konten tidak menimpa area navbar */
+.horizontal-header,
+.food-section,
+.container,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Navbar tetap di atas dan transparansi tidak menutupi tombol */
+nav.navbar-light {
+  position: relative;
+  z-index: 9998;
+  background: white; /* supaya area transparan tidak menutupi tombol */
+}
+
+/* Perbaikan agar tombol "Masuk" bisa diklik */
+.navbar-light .absolute {
+  pointer-events: none; /* biar area tengah gak blokir klik */
+}
+
+.navbar-light .absolute a {
+  pointer-events: auto; /* tapi link di tengah tetap bisa diklik */
+}
+
+.navbar-light .flex.items-center.ml-auto {
+  position: relative;
+  z-index: 10; /* pastikan tombol Masuk di atas layer lain */
+}
+
+/* Perbaikan Warna Tombol Masuk di Navbar */
+.navbar-light a.accent-yellow {
+  background-color: #f5a623; /* Warna oranye Jejak Rasa Nusantara */
+  color: #ffffff !important; /* Pastikan teks putih */
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-light a.accent-yellow:hover {
+  background-color: #e6951f; /* Warna hover lebih gelap */
+}
+
+/* === Navbar Sticky Tetap di Atas Saat Scroll === */
+nav.navbar-light {
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* pastikan di atas elemen lain */
+  background-color: #ffffff; /* warna putih agar tidak transparan */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* sedikit bayangan saat scroll */
+}
