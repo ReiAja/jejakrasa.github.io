@@ -1,0 +1,257 @@
+/* GENERAL */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #000;
+}
+
+/* NAVBAR */
+.navbar-light {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Desktop nav link */
+.navlink-desktop {
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.2s;
+  color: #000;
+}
+
+.navlink-desktop:hover {
+  color: #fbbf24;
+}
+
+.nav-underline {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: #fbbf24;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.25s;
+}
+
+.navlink-desktop:hover .nav-underline,
+.active-link .nav-underline {
+  transform: scaleX(1);
+}
+
+.active-link {
+  color: #fbbf24 !important;
+}
+
+/* LOGIN BUTTON */
+.btn-login-desktop {
+  background: #fbbf24;
+  color: #000 !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn-masuk {
+    background: #fbbf24 !important;
+    color: #ffff !important;
+    box-shadow: none !important; /* Hentikan efek mencerahkan */
+    filter: none !important;     /* Mencegah browser menaikkan brightness */
+}
+
+/* --- HEADER BESAR (SAMA SEPERTI LANDINGPAGE) --- */
+.horizontal-header {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.header-sub {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d94a38;
+}
+
+
+/* GAMBAR FANCY */
+.img-box {
+  width: 100%;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* KONTAK */
+.contact-wrapper {
+  background: #111;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.contact-description {
+  color: #bbb;
+  margin-bottom: 25px;
+}
+
+/* FORM */
+.contact-form {
+  background: #1c1c1c;
+  border: 1px solid #2c2c2c;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.contact-form button {
+  width: 100%;
+  background: #fbbf24;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* POPUP */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay:target {
+  display: flex;
+}
+
+/* POPUP LEBIH BESAR */
+.popup {
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  max-width: 420px;   /* lebih lebar */
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  animation: popupShow 0.35s ease;
+}
+
+.popup h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.popup p {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.popup a {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  background: #1a1a1a;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #ccc;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-list a {
+  color: #bbb;
+}
+
+.footer-list a:hover {
+  color: #fbbf24;
+}
+
+.footer-social i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.footer-social i:hover {
+  color: #fbbf24;
+}
+
+.footer-copy {
+  text-align: center;
+  color: #777;
+  padding-top: 15px;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+}

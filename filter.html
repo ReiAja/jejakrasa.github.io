@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Makanan</title>
+
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="filter.css">
+
+    <!-- Tailwind (dipakai di seluruh website kamu) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome untuk icon menu -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100">
+
+ <nav class="sticky top-0 z-50 navbar-light bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a href="landingpage.html">
+        <img src="gambar/logoweb.svg" alt="Logo Jejak Rasa" class="h-20 w-auto">
+      </a>
+
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex items-center space-x-6 text-base font-medium">
+        <a href="landingpage.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+          Beranda
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+        </a>
+
+        <a href="filter.html" class="relative pb-1 transition-all duration-200 hover text-amber-400">
+          Filter
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-100"></span>
+        </a>
+
+        <a href="tentangkami.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+          Tentang Kami
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+        </a>
+      </div>
+
+      <!-- Tombol Masuk di Desktop -->
+      <a href="login.html"
+         class="hidden md:inline-block btn-masuk px-5 py-2 text-sm font-semibold shadow-md transition">
+        Masuk
+      </a>
+
+      <!-- Tombol Hamburger (Mobile) -->
+      <button id="menu-btn" class="md:hidden text-3xl text-gray-700 focus:outline-none">
+          <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden flex flex-col mt-3 bg-white shadow-lg rounded-lg p-4 space-y-4">
+
+      <a href="landingpage.html" class="text-gray-700 font-medium hover:text-amber-400">Beranda</a>
+      <a href="filter.html" class="text-gray-700 font-medium hover:text-amber-400">Filter</a>
+      <a href="tentangkami.html" class="text-gray-700 font-medium hover:text-amber-400">Tentang Kami</a>
+
+      <a href="login.html"
+         class="bg-primary-yellow text-white font-bold py-2 px-4 rounded-lg text-center hover:bg-secondary-yellow transition">
+        Masuk
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+    <!-- ======================= FILTER BOX ======================= -->
+    <main>
+        <div class="filter-wrapper">
+            <div class="filter-box">
+                <h2>Filter Makanan</h2>
+
+                <p>Pilih Jenis:</p>
+                <div class="button-group">
+                    <button class="jenis-btn active" data-value="Makanan Utama">Makanan Utama</button>
+                    <button class="jenis-btn" data-value="Camilan">Camilan</button>
+                </div>
+
+                <p>Daerah Asal:</p>
+                <select id="daerahSelect">
+                    <option value="Semua">Semua Daerah</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Jawa Tengah">Jawa Tengah</option>
+                    <option value="Sumatera Barat">Sumatera Barat</option>
+                    <option value="Bali">Bali</option>
+                </select>
+
+                <button id="filterBtn" class="submit-btn">Tampilkan Hasil</button>
+            </div>
+        </div>
+
+        <!-- ======================= LIST MAKANAN ======================= -->
+        <div id="foodList" class="food-grid"></div>
+    </main>
+
+    <!-- Footer --><footer class="bg-[#1a1a1a] mt-20 pt-12 pb-8 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                
+                <!-- Tautan Cepat --><div>
+                    <h4 class="text-base font-semibold text-white mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Beranda</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Komunitas</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Risor</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal --><div class="col-span-1 md:col-span-2">
+                    <h4 class="text-base font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Persyaratan Layanan (TOS)</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Pedoman Penggunaan</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Arbitrase</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontak & Sosmed --><div>
+                    <h4 class="text-base font-semibold text-white mb-4">Kontak & Sosmed</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Bantuan</a></li>
+                        <li><a href="#" class="hover:text-accent-yellow transition duration-150">Karir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Ikon Sosial Media --><div class="col-span-2 md:col-span-1">
+                    <h4 class="text-base font-semibold text-white mb-4">IKUTI KAMI</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent-yellow transition duration-150">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-yellow transition duration-150">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-yellow transition duration-150">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Hak Cipta --><div class="mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
+                &copy; Copyright 2024 Jejak Rasa Nusantara. Hak cipta dilindungi undang-undang.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ======================= SCRIPT ======================= -->
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <script>
+    function goToDetail(url) {
+        window.location.href = url;
+    }
+    </script>
+</body>
+</html>

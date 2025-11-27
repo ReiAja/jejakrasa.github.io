@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page - Jejak Rasa (Logged In)</title>
+  <link rel="stylesheet" href="landingpage.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="sticky top-0 z-50 navbar-light bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo -->
+        <a href="landingpage-login.html">
+          <img src="gambar/logoweb.svg" alt="Logo" class="h-20 w-auto">
+        </a>
+
+        <!-- Menu Desktop -->
+    <div class="hidden md:flex items-center space-x-6 text-base font-medium">
+        <a href="landingpage.html" class="relative pb-1 transition-all duration-200 hover text-amber-400">
+          Beranda
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-100"></span>
+        </a>
+
+        <a href="filter.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+          Filter
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+        </a>
+
+        <a href="tentangkami.html" class="relative pb-1 transition-all duration-200:text-amber-400">
+          Tentang Kami
+          <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0  hover:scale-x-100 origin-left transition"></span>
+        </a>
+      </div>
+
+        <!-- PROFILE ICON (KUNING) -->
+        <div class="hidden md:flex items-center">
+        <div class="relative" id="profileWrapper">
+
+            <!-- Lingkaran Kuning -->
+            <div id="profileBtn"
+                class="w-10 h-10 rounded-full bg-yellow-400 text-white flex items-center 
+                        justify-center cursor-pointer shadow border border-yellow-500">
+                <i class="fa-solid fa-user text-lg"></i>
+            </div>
+
+            <!-- Dropdown -->
+            <div id="profileMenu" class="hidden absolute right-0 mt-3 w-44 bg-white shadow-lg rounded-xl overflow-hidden border z-50">
+            <a href="profile.html" class="block px-4 py-2 hover:bg-gray-100">Profil</a>
+            <a href="dashboard.html" class="block px-4 py-2 hover:bg-gray-100">Admin</a>
+            <a href="landingpage.html" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-btn" class="md:hidden text-2xl text-gray-700"><i class="fas fa-bars"></i></button>
+      </div>
+
+      <!-- Mobile Menu (include Admin & Logout here too) -->
+      <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-3 bg-white shadow-lg rounded-lg p-4 space-y-4">
+        <a href="landingpagelogin.html" class="text-gray-700 font-medium hover:text-amber-400">Beranda</a>
+        <a href="filter.html" class="text-gray-700 font-medium hover:text-amber-400">Filter</a>
+        <a href="tentangkami.html" class="text-gray-700 font-medium hover:text-amber-400">Tentang Kami</a>
+        <a href="profile.html" class="text-gray-700 font-medium hover:text-amber-400">Profil</a>
+        <a href="dashboard.html" class="text-gray-700 font-medium hover:text-amber-400">Admin</a>
+        <a href="landingpage.html" class="text-gray-700 font-medium hover:text-amber-400">Logout</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <header class="horizontal-header">
+    <div class="logo-text-group">
+      <img src="gambar/logoweb.svg" alt="Logo Jejak Rasa" class="logo">
+      <div class="text-stack">
+        <h1 class="title-jejak">Jejak Rasa</h1>
+        <h2 class="title-nusantara">Nusantara</h2>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <div class="search-box">
+        <span class="search-icon">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="text" placeholder="Cari makanan" />
+      </div>
+      <button class="search-button">CARI</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="food-section">
+      <h2 class="section-title">Makanan Populer</h2>
+      <div class="food-grid">
+        <a href="detailsoto.html">
+        <div class="food-card"
+          style="background-image: url('https://o-cdf.oramiland.com/unsafe/cnc-magazine.oramiland.com/parenting/original_images/soto_ayam_bumbu_kuning.jpg');">
+          <div class="food-label">Soto Ayam Kuning</div>
+        </div>
+        </a>
+        <a href="detailsate.html">
+        <div class="food-card"
+          style="background-image: url('https://img-global.cpcdn.com/recipes/a6ca9f36b02b089b/1200x630cq80/photo.jpg');">
+          <div class="food-label">Sate</div>
+        </div>
+        </a>
+        <a href="detailrendang.html">
+        <div class="food-card"
+          style="background-image: url('https://asset.kompas.com/crops/QsUYn6p5xK4DsivCrxa0_TXdjuk=/10x36:890x623/1200x800/data/photo/2023/03/25/641e5ef63dea4.jpg');">
+          <div class="food-label">Rendang</div>
+        </div>
+         </a>
+         <a href="detailgudeg.html">
+        <div class="food-card"
+          style="background-image: url('https://www.tokomesin.com/wp-content/uploads/2015/09/gudeg-tokomesin.jpg');">
+          <div class="food-label">Gudeg</div>
+        </div>
+      </a>
+        <div class="food-card"
+          style="background-image: url('https://lingkar.news/wp-content/uploads/2023/03/Aneka-Resep-Pempek-Makanan-Tradisional-Khas-Palembang-750x536.jpg');">
+          <div class="food-label">Pempek</div>
+        </div>
+        <div class="food-card"
+          style="background-image: url('https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/page_medias/resep_ayam_betutu.jpg');">
+          <div class="food-label">Ayam Betutu</div>
+        </div>
+        <div class="food-card"
+          style="background-image: url('https://indonesiakaya.com/wp-content/uploads/2023/04/pakk_Artboard_1.jpg');">
+          <div class="food-label">Papeda</div>
+        </div>
+        <div class="food-card"
+          style="background-image: url('https://wiratech.co.id/wp-content/uploads/2018/10/Makanan-khas-aceh.jpg');">
+          <div class="food-label">Mie Aceh</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Cemilan Tradisional</h2>
+      <div class="food-grid">
+        <div class="food-card"
+          style="background-image: url('https://pialegong.id/wp-content/uploads/2023/08/Brem-Bali-Menyelami-Kelezatan-Fermentasi-Tradisional-Pulau-Dewata.jpg');">
+          <div class="food-label">Brem</div>
+        </div>
+        <div class="food-card"
+          style="background-image: url('https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/12/15094201/Ini-Resep-dan-Cara-Membuat-Kue-Lumpur-untuk-Camilan-di-Rumah.jpg.webp');">
+          <div class="food-label">Kue Lumpur</div>
+        </div>
+        <div class="food-card"
+          style="background-image: url('https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/259/2025/08/22/Desain-tanpa-judul-15-148619142.png');">
+          <div class="food-label">Klepon</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <img
+            src="https://awsimages.detik.net.id/community/media/visual/2020/07/06/nasi-padang.jpeg?w=600&q=90"
+            alt="Nasi Padang">
+          <div class="card-content">
+            <h2>Nasi <span>Padang</span></h2>
+            <p>
+              Nasi Padang adalah sajian khas dari Sumatera Barat, Indonesia,
+              yang berasal dari tradisi kuliner Minangkabau.
+              Ciri khasnya adalah nasi putih hangat yang disajikan
+              bersama beragam lauk pauk yang kaya rempah dan rasa.
+              Anda bisa memilih Rendang, Ayam Pop, atau Gulai Tunjang.
+            </p>
+            <a href="#" class="btn">Detail Makanan</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="yellow-bg">
+        <div class="container">
+          <div class="card reverse-card">
+            <div class="card-content">
+              <h2>Kerak <span>Telor</span></h2>
+              <p>
+                Kerak Telor berasal dari masyarakat Betawi di Jakarta
+                dan sudah dikenal sejak era kolonial Belanda.
+                Konon, makanan ini tercipta secara tidak sengaja pada tahun 1920-an
+                oleh warga Menteng yang bereksperimen dengan bahan lokal seperti
+                kelapa dan beras ketan. Kini menjadi jajanan wajib di Jakarta.
+              </p>
+              <a href="#" class="btn">Detail Makanan</a>
+            </div>
+            <img
+              src="https://www.maggi.id/sites/default/files/srh_recipes/60511dbf3058c967979171c295120e06.png"
+              alt="Kerak Telor">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="bg-secondary-yellow py-20 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center items-center download-section-container">
+
+          <div class="flex justify-center w-full md:w-1/2 md:justify-end pr-0 md:pr-10">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="app-header">
+                  <span class="font-bold">Selamat datang !</span>
+                  <div class="flex items-center">
+                    <span class="font-semibold">ReiAja</span>
+                    <svg class="ml-2 h-5 w-5 text-primary-yellow" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="app-content mt-2">
+                  <div class="flex items-center border border-gray-300 rounded-lg bg-gray-50 p-2">
+                    <svg class="h-5 w-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" placeholder="Cari disini..." class="bg-transparent text-sm w-full focus:outline-none">
+                    <div class="bg-primary-yellow h-6 w-6 rounded flex items-center justify-center ml-2">
+                      <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="app-content">
+                  <img
+                    src="https://placehold.co/400x200/FAD73D/242424?text=Pergi+Kuliner+Festival+Kekinian"
+                    onerror="this.src='https://placehold.co/400x200/FAD73D/242424?text=Pergi+Kuliner+Festival+Kekinian'"
+                    alt="Banner Festival Kuliner" class="rounded-lg w-full">
+                  <p class="text-sm font-semibold mt-2">Katalog Produksi</p>
+                </div>
+
+                <div class="app-content grid grid-cols-4 gap-2 text-center mt-2">
+                  <div class="text-xs">
+                    <div
+                      class="bg-yellow-200 h-12 w-12 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg class="h-6 w-6 text-primary-yellow" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                      </svg>
+                    </div>
+                    <p>Beranda</p>
+                  </div>
+                  <div class="text-xs">
+                    <div
+                      class="bg-yellow-200 h-12 w-12 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg class="h-6 w-6 text-primary-yellow" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm10 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                      </svg>
+                    </div>
+                    <p>Jenis</p>
+                  </div>
+                  <div class="text-xs">
+                    <div
+                      class="bg-yellow-200 h-12 w-12 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg class="h-6 w-6 text-primary-yellow" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 17.5c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5 4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z" />
+                      </svg>
+                    </div>
+                    <p>Komunitas</p>
+                  </div>
+                  <div class="text-xs">
+                    <div
+                      class="bg-yellow-200 h-12 w-12 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg class="h-6 w-6 text-primary-yellow" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.62V7z" />
+                      </svg>
+                    </div>
+                    <p>KulkasKu</p>
+                  </div>
+                  <div class="text-xs">
+                    <div
+                      class="bg-yellow-200 h-12 w-12 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg class="h-6 w-6 text-primary-yellow" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+                      </svg>
+                    </div>
+                    <p>Pekerja</p>
+                  </div>
+                </div>
+
+                <div class="app-content mt-auto pt-2 border-t border-gray-100">
+                  <p class="text-xs text-gray-400">Pencarian Populer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 md:pl-10 text-center md:text-left pt-10 md:pt-0">
+            <h3 class="text-5xl font-extrabold text-text-dark mb-4">
+              Unduh Sekarang !
+            </h3>
+            <p class="text-lg text-text-dark mb-8 max-w-lg mx-auto md:mx-0">
+              Unduh Aplikasi Kami untuk menemukan Resep Makanan atau Cara pembuatannya.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start space-x-4">
+              <a href="#" class="inline-block">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Get it on Google Play" class="h-12 w-auto">
+              </a>
+              <a href="#" class="inline-block">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                  alt="Download on the App Store" class="h-12 w-auto">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+
+  <footer class="bg-[#1a1a1a] mt-20 pt-12 pb-8 border-t border-gray-700 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+
+        <div>
+          <h4 class="text-base font-semibold text-white mb-4">Tautan Cepat</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Beranda</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Komunitas</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Risor</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-1 md:col-span-2">
+          <h4 class="text-base font-semibold text-white mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Persyaratan Layanan (TOS)</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Kebijakan Privasi</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Pedoman Penggunaan</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Arbitrase</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-base font-semibold text-white mb-4">Kontak & Sosmed</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Bantuan</a></li>
+            <li><a href="#" class="hover:text-primary-yellow transition duration-150">Karir</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 md:col-span-1">
+          <h4 class="text-base font-semibold text-white mb-4">IKUTI KAMI</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+              <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+              <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
+        &copy; Copyright 2025 Jejak Rasa Nusantara.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ---------------- Scripts ---------------- -->
+  <script>
+    // Toggle mobile menu
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Toggle profile dropdown (desktop)
+    const profileBtn = document.getElementById('profileBtn');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // supaya event tidak bubble ke document
+      profileMenu.classList.toggle('hidden');
+    });
+
+    // Tutup dropdown saat klik di luar
+    document.addEventListener('click', (e) => {
+      const wrapper = document.getElementById('profileWrapper');
+      if (!wrapper.contains(e.target)) {
+        if (!profileMenu.classList.contains('hidden')) {
+          profileMenu.classList.add('hidden');
+        }
+      }
+    });
+
+    // Optional: tutup dropdown saat menekan Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!profileMenu.classList.contains('hidden')) profileMenu.classList.add('hidden');
+        const mobile = document.getElementById('mobile-menu');
+        if (!mobile.classList.contains('hidden')) mobile.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

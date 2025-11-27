@@ -1,0 +1,407 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f5f3ef 100%);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar-light {
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-light a.active-link {
+            color: #fbbf24;
+            border-bottom-color: #fbbf24;
+        }
+
+        .login-button button {
+            background-color: #fbbf24;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button button:hover {
+            background-color: #fbbf24;
+        }
+
+        nav.navbar-light {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-light a.accent-yellow {
+            background-color: #fbbf24;
+            color: #ffffff !important;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-light a.accent-yellow:hover {
+            background-color: #fbbf24;
+        }
+
+        /* Warna tombol "Masuk" */
+        .bg-primary-yellow {
+            background: #fbbf24 !important;
+            color: #000 !important;   /* teks hitam */
+        }
+
+        .bg-secondary-yellow {
+            background: #fbbf24 !important;
+            color: #000 !important;
+        }
+
+        .text-white {
+            color: #ffffff !important;
+        }
+
+        /* LOGIN BUTTON */
+        .btn-login-desktop {
+        background: #fbbf24;
+        color: #ffff !important;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        }
+
+        /* Tombol Masuk */
+        .navbar-light .btn-masuk {
+            background: #fbbf24 !important;
+            color: #ffff !important;
+            font-weight: 600 !important;
+            border-radius: 8px;
+        }
+
+        /* Hover tetap kuning */
+        .navbar-light .btn-masuk:hover {
+            background: #fbbf24 !important;
+            color: #ffff !important;
+        }
+
+        /* Filter Wrapper */
+        .filter-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        /* Filter Box dengan efek glassmorphism */
+        .filter-box {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08), 
+                        0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .filter-box h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 28px;
+            position: relative;
+            padding-left: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .filter-box h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 32px;
+            background: linear-gradient(180deg, #ffc400 0%, #ffb700 100%);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(255,196,0,0.3);
+        }
+
+        .filter-box p {
+            font-size: 15px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 12px;
+            margin-top: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Button Group */
+        .button-group {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .jenis-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 16px;
+            border: 2px solid #e8e8e8;
+            background: #fafafa;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            font-size: 15px;
+            color: #555;
+            letter-spacing: 0.2px;
+        }
+
+        .jenis-btn:hover {
+            background: #fff8e1;
+            border-color: #ffd54f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,196,0,0.15);
+        }
+
+        .jenis-btn.active {
+            background: linear-gradient(135deg, #ffc400 0%, #ffb700 100%);
+            border-color: #ffc400;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(255,196,0,0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Dropdown */
+        select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: #fafafa;
+            border: 2px solid #e8e8e8;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        select:hover {
+            border-color: #ffd54f;
+            background: #fff;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ffc400;
+            box-shadow: 0 0 0 3px rgba(255,196,0,0.1);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 16px 0;
+            margin-top: 28px;
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffc400 0%, #ffb700 100%);
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 24px rgba(255,196,0,0.35);
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,196,0,0.45);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Food Grid */
+        .food-grid {
+            width: 100%;
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        /* Food Card dengan hover effect elegant */
+        .food-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,196,0,0.1) 0%, rgba(255,183,0,0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: #ffc400;
+        }
+
+        .food-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Image Container */
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .food-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Food Info dengan typography yang lebih elegan */
+        .food-info {
+            padding: 24px 24px 28px;
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
+        }
+
+        .food-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .food-card:hover .food-info h3 {
+            color: #ffc400;
+        }
+
+        .food-info .category {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffc400;
+            background: rgba(255,196,0,0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .food-info .region {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .food-info .region::before {
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .filter-box {
+                padding: 30px 24px;
+            }
+
+            .filter-box h2 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .food-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #999;
+        }
+
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .empty-state h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            font-size: 15px;
+            color: #999;
+        }

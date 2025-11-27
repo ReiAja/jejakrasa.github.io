@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Resep - Sate Ayam Madura Bumbu Kacang</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'primary-yellow': '#FAD73D', /* Warna kuning cerah */
+                    'secondary-yellow': '#E0C34B',
+                    'dark-bg': '#242424', /* Warna footer */
+                    'text-dark': '#333333',
+                    'accent-yellow': '#f5a623', /* Warna kuning untuk elemen interaktif */
+                    'light-bg': '#f4f7f9', /* Latar belakang bagian putih */
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                }
+            }
+        }
+    }
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    /* ===== NAVBAR (Gunakan CSS yang sudah Anda tentukan) ===== */
+    .navbar-light {
+        background-color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .active-link {
+        color: #fbbf24;
+        border-bottom: 2px solid #fbbf24;
+    }
+
+    .accent-yellow {
+        background-color: #fbbf24;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .accent-yellow:hover {
+        background-color: #e5a400;
+    }
+
+    nav {
+        position: relative;
+        z-index: 9999;
+    }
+
+    /* Penomoran Langkah Memasak */
+    .langkah-nomor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #FAD73D;
+        /* primary-yellow */
+        color: #333333;
+        /* text-dark */
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    /* Tambahan CSS untuk Bintang Interaktif */
+    #star-rating i {
+        cursor: pointer; 
+        transition: color 0.15s;
+    }
+    
+    /* Warna kuning saat bintang terisi penuh (menggunakan kelas FontAwesome 'fas') */
+    #star-rating i.fas { 
+        color: #FAD73D; 
+    }
+
+    /* LOGIN BUTTON */
+.btn-login-desktop {
+  background: #fbbf24;
+  color: #000 !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn-masuk {
+    background: #fbbf24 !important;
+    color: #ffff !important;
+    box-shadow: none !important; /* Hentikan efek mencerahkan */
+    filter: none !important;     /* Mencegah browser menaikkan brightness */
+}
+</style>
+
+<body>
+
+    <nav class="sticky top-0 z-50 navbar-light bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex justify-between items-center h-16">
+
+                <a href="landingpage.html">
+                    <img src="gambar/logoweb.svg" alt="Logo Jejak Rasa" class="h-20 w-auto">
+                </a>
+
+                 <div class="hidden md:flex items-center space-x-6 text-base font-medium">
+                    <a href="landingpage.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+                        Beranda
+                        <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+                    </a>
+
+                    <a href="filter.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+                        Filter
+                        <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+                    </a>
+
+                    <a href="tentangkami.html" class="relative pb-1 transition-all duration-200 hover:text-amber-400">
+                        Tentang Kami
+                        <span class="absolute left-0 -bottom-0.5 w-full h-[2px] bg-amber-400 scale-x-0 hover:scale-x-100 origin-left transition"></span>
+                    </a>
+                </div>
+
+                <a href="login.html" class="hidden md:inline-block btn-masuk px-5 py-2 text-sm font-semibold rounded-lg transition">
+                    Masuk
+                </a>
+
+                <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-3 bg-white shadow-lg rounded-lg p-4 space-y-4">
+
+                <a href="landingpage.html" class="text-gray-700 font-medium hover:text-amber-400">Beranda</a>
+                <a href="filter.html" class="text-gray-700 font-medium hover:text-amber-400">Filter</a>
+                <a href="tentangkami.html" class="text-gray-700 font-medium hover:text-amber-400">Tentang Kami</a>
+
+                <a href="login.html" class="bg-primary-yellow text-white font-bold py-2 px-4 rounded-lg text-center hover:bg-secondary-yellow transition">
+                    Masuk
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="max-w-7xl mx-auto px-4 md:px-8 mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b pb-4 mb-6">
+                <div>
+                    <p class="text-sm font-semibold text-accent-yellow uppercase">Madura, Jawa Timur</p>
+                    <h1 class="text-5xl font-extrabold text-text-dark my-1">Sate Ayam Madura</h1>
+
+                    <div class="flex items-center text-lg text-yellow-500 mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-2 text-gray-600 text-base font-medium">(4.9 dari 5 - 350 ulasan)</span>
+                    </div>
+                </div>
+
+                <div class="flex space-x-1 mt-4 md:mt-0">
+                    <button class="bg-primary-yellow text-text-white font-bold py-2 px-4 rounded-full hover:bg-secondary-yellow transition duration-150">
+                        <i class="fas fa-bookmark mr-1"></i> Simpan Resep
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-around bg-gray-100 p-4 rounded-xl text-center shadow-inner">
+                <div class="p-2">
+                    <p class="text-sm text-gray-500">Porsi</p>
+                    <p class="text-xl font-bold text-text-dark"><i class="fas fa-users mr-1 text-accent-yellow"></i> 5 Orang</p>
+                </div>
+                <div class="p-2">
+                    <p class="text-sm text-gray-500">Persiapan</p>
+                    <p class="text-xl font-bold text-text-dark"><i class="fas fa-hourglass-start mr-1 text-accent-yellow"></i> 30 Menit</p>
+                </div>
+                <div class="p-2">
+                    <p class="text-sm text-gray-500">Memasak</p>
+                    <p class="text-xl font-bold text-text-dark"><i class="fas fa-fire mr-1 text-accent-yellow"></i> 45 Menit</p>
+                </div>
+                <div class="p-2">
+                    <p class="text-sm text-gray-500">Tingkat Kesulitan</p>
+                    <p class="text-xl font-bold text-text-dark"><i class="fas fa-hand-rock mr-1 text-accent-yellow"></i> Sedang</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+            <div class="lg:col-span-2">
+                <div class="mb-8 rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://o-cdf.oramiland.com/unsafe/cnc-magazine.oramiland.com/parenting/original_images/sate_ayam.jpg" alt="Gambar Sate Ayam Madura" class="w-full h-auto object-cover">
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-lg mb-10">
+                    <h2 class="text-3xl font-bold text-text-dark mb-4 border-b pb-2">Sejarah & Kekhasan Sate Madura</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Sate Ayam Madura adalah salah satu ikon kuliner Indonesia, terkenal karena bumbu kacangnya yang kental dan cita rasa manis gurih yang khas. Konon, kepopuleran sate ini dibawa oleh perantau dari Madura yang menyebarkan keahlian membakar sate ke berbagai penjuru Jawa dan Nusantara.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kekhasan Sate Madura terletak pada potongan daging ayam yang lebih kecil, tekstur bumbu kacang yang lembut karena menggunakan kemiri, dan proses pembakaran yang diulang. Sate dicelupkan ke bumbu sebelum dibakar pertama, lalu dicelup lagi saat setengah matang, menghasilkan sate yang juicy dan bumbu yang meresap sempurna.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-lg mb-10">
+                    <h2 class="text-3xl font-bold text-text-dark mb-6 border-b pb-2">Langkah Memasak</h2>
+                    <ol class="space-y-6 text-gray-700">
+                        <li class="flex">
+                            <span class="langkah-nomor">1</span>
+                            <p class="flex-1">Potong daging ayam bentuk dadu. Tusuk daging ayam pada tusuk sate (5-6 potong per tusuk). Sisihkan.</p>
+                        </li>
+                        <li class="flex">
+                            <span class="langkah-nomor">2</span>
+                            <p class="flex-1">Buat Bumbu Kacang: Goreng kacang tanah, bawang putih, kemiri, dan cabai hingga matang. Haluskan semua bahan tersebut bersama gula merah, air, dan sedikit garam. Masak bumbu hingga mengental dan keluar minyaknya, tambahkan sedikit kecap.</p>
+                        </li>
+                        <li class="flex">
+                            <span class="langkah-nomor">3</span>
+                            <p class="flex-1">Ambil 1/4 bagian bumbu kacang yang sudah dimasak, campurkan dengan kecap manis dan sedikit air/minyak goreng sebagai Bumbu Celupan. Gunakan bumbu ini untuk marinasi (rendam) sate selama 15-20 menit.</p>
+                        </li>
+                        <li class="flex">
+                            <span class="langkah-nomor">4</span>
+                            <p class="flex-1">Bakar sate di atas bara api (atau teflon panas) sambil di bolak-balik. Saat sate sudah setengah matang, celupkan kembali sate ke dalam sisa Bumbu Celupan. Bakar lagi hingga matang sempurna dan bumbu menghitam karamel.</p>
+                        </li>
+                        <li class="flex">
+                            <span class="langkah-nomor">5</span>
+                            <p class="flex-1">Sajikan sate di atas piring. Siram dengan sisa bumbu kacang kental yang disimpan. Taburi dengan irisan bawang merah, bawang goreng, dan perasan jeruk limau. Nikmati bersama lontong atau nasi hangat.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="p-6 bg-primary-yellow text-text-dark rounded-xl shadow-lg mb-10">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-text-dark pb-2">Bahan-Bahan</h2>
+                    <ul class="list-disc ml-5 space-y-2 font-medium">
+                        <li>500 gr daging ayam fillet (dada/paha), potong dadu</li>
+                        <li>50-60 tusuk sate bambu (rendam air panas sebentar)</li>
+                        <li>Bumbu Kacang: 200 gr kacang tanah goreng, 4 siung bawang putih, 3 butir kemiri sangrai, 1/2 sdt garam, 1 sdm gula merah sisir, 200 ml air.</li>
+                        <li>Pelengkap: Kecap manis secukupnya, 2 sdm minyak goreng, 5 siung bawang merah (iris), jeruk limau, lontong/nasi.</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-text-dark mb-4 border-b pb-2">Tips Chef</h3>
+                    <p class="text-gray-700 italic border-l-4 border-accent-yellow pl-4">
+                        "Rahasia rasa Sate Madura yang otentik terletak pada kemiri di bumbu kacang. Kemiri memberikan tekstur kental yang halus dan rasa gurih yang mendalam. Pastikan Anda mengolesi sate dengan bumbu berulang kali saat dibakar agar bumbu meresap hingga ke dalam daging, tidak hanya di permukaan."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-light-bg mt-10">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <h2 class="text-4xl font-extrabold text-text-dark mb-8">Ulasan Pengguna</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-accent-yellow">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xl font-bold text-text-dark mr-2">Valen Shko
+                            <div class="text-sm text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Bumbu kacangnya mantap, kental dan manisnya pas! Teknik pencelupan bumbu dua kali saat dibakar benar-benar membuat sate ini lebih enak dari yang biasa saya buat. Sangat puas dengan resep ini."</p>
+                        <p class="text-xs text-gray-500 mt-3">Diulas pada 10 November 2025</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-accent-yellow">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xl font-bold text-text-dark mr-2">Citra Dewi</span>
+                            <div class="text-sm text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Satenya lembut dan bumbu meresap. Saya menggunakan paha ayam agar lebih juicy. Membakar di atas arang memang memberikan aroma yang tak tertandingi. Hanya butuh sedikit tambahan cabai di bumbu kacangnya sesuai selera."</p>
+                        <p class="text-xs text-gray-500 mt-3">Diulas pada 15 November 2025</p>
+                    </div>
+
+                    <div class="md:col-span-2 p-6 bg-white rounded-xl shadow-lg border-t-2 border-primary-yellow">
+                        <h3 class="text-2xl font-bold text-text-dark mb-4">Tulis Ulasan Anda</h3>
+                        <form id="review-form" class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <label class="font-medium text-gray-700">Rating:</label>
+                                <div id="star-rating" class="text-xl text-gray-300">
+                                    <i class="far fa-star cursor-pointer" data-rating="1"></i>
+                                    <i class="far fa-star cursor-pointer" data-rating="2"></i>
+                                    <i class="far fa-star cursor-pointer" data-rating="3"></i>
+                                    <i class="far fa-star cursor-pointer" data-rating="4"></i>
+                                    <i class="far fa-star cursor-pointer" data-rating="5"></i>
+                                </div>
+                                <input type="hidden" id="selected-rating" name="rating" value="0">
+                            </div>
+                            <div>
+                                <textarea id="review-text" placeholder="Bagikan pengalaman memasak dan hasil Sate Ayam Madura Anda..." rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-yellow focus:border-accent-yellow transition duration-150 text-text-dark"></textarea>
+                            </div>
+                            <button type="submit" class="bg-accent-yellow text-white font-bold py-2 px-6 rounded-full hover:bg-secondary-yellow transition duration-300">
+                                Kirim Ulasan
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="success-notification" class="fixed bottom-5 right-5 z-50 hidden">
+        <div class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-xl flex items-center space-x-3 transition duration-300 ease-in-out">
+            <i class="fas fa-check-circle text-xl"></i>
+            <p class="font-semibold">Rating & Ulasan Berhasil Dikirim!</p>
+        </div>
+    </div>
+
+
+    <section class="max-w-7xl mx-auto px-4 md:px-8 mb-12 flex justify-center mt-10">
+        <a href="landingpage.html" class="inline-flex items-center bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 text-lg">
+            <i class="fas fa-arrow-left mr-3"></i> Kembali ke Beranda
+        </a>
+    </section>
+
+    <footer class="bg-[#1a1a1a] mt-20 pt-12 pb-8 border-t border-gray-700 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+
+                <div>
+                    <h4 class="text-base font-semibold text-white mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Beranda</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Komunitas</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Risor</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-base font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Persyaratan Layanan (TOS)</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Pedoman Penggunaan</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Arbitrase</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base font-semibold text-white mb-4">Kontak & Sosmed</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Bantuan</a></li>
+                        <li><a href="#" class="hover:text-primary-yellow transition duration-150">Karir</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-base font-semibold text-white mb-4">IKUTI KAMI</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-yellow transition duration-150">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
+                &copy; Copyright 2024 Jejak Rasa Nusantara. Hak cipta dilindungi undang-undang.
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Logika Toggle Menu Mobile
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // =======================================================
+            // Logika Interactive Star Rating
+            // =======================================================
+            const starContainer = document.getElementById("star-rating");
+            // Cek apakah elemen starContainer ada sebelum melanjutkan
+            if (starContainer) {
+                const stars = starContainer.querySelectorAll("i");
+                const selectedRatingInput = document.getElementById("selected-rating");
+                let currentRating = 0; // Menyimpan nilai rating yang terakhir diklik/disimpan
+
+                // Fungsi untuk memperbarui tampilan bintang berdasarkan rating
+                function updateStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            // Bintang Terisi: fas fa-star (solid) dan warna kuning
+                            star.classList.remove('far', 'text-gray-300');
+                            star.classList.add('fas', 'text-yellow-500'); 
+                        } else {
+                            // Bintang Kosong: far fa-star (outline) dan warna abu-abu
+                            star.classList.remove('fas', 'text-yellow-500');
+                            star.classList.add('far', 'text-gray-300');
+                        }
+                    });
+                    // Menyimpan nilai rating di input tersembunyi
+                    selectedRatingInput.value = rating;
+                }
+
+                stars.forEach(star => {
+                    const starRating = parseInt(star.getAttribute('data-rating'));
+                    
+                    // Event saat mengarahkan kursor (hover)
+                    star.addEventListener('mouseover', () => {
+                        updateStars(starRating);
+                    });
+
+                    // Event saat kursor meninggalkan area (unhover)
+                    star.addEventListener('mouseout', () => {
+                        updateStars(currentRating); // Kembali ke rating yang terakhir disimpan
+                    });
+
+                    // Event saat mengklik bintang (menyimpan nilai rating)
+                    star.addEventListener('click', () => {
+                        currentRating = starRating; // Simpan nilai rating yang diklik
+                        updateStars(currentRating); // Tetapkan tampilan bintang
+                    });
+                });
+            }
+
+
+            // =======================================================
+            // Logika Form Submission & Pop-up Notifikasi
+            // =======================================================
+            const reviewForm = document.getElementById('review-form');
+            const notification = document.getElementById('success-notification');
+            const reviewTextarea = document.getElementById('review-text');
+
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function (e) {
+                    e.preventDefault(); // Mencegah form refresh halaman
+
+                    const ratingValue = parseInt(document.getElementById("selected-rating").value);
+                    const reviewContent = reviewTextarea.value.trim();
+
+                    // Validasi: Pastikan rating sudah dipilih dan ulasan tidak kosong
+                    if (ratingValue === 0) {
+                        alert("Mohon berikan rating (bintang) terlebih dahulu sebelum mengirim ulasan.");
+                        return;
+                    }
+
+                    if (reviewContent === "") {
+                        alert("Mohon isi kolom ulasan.");
+                        return;
+                    }
+
+                    // 1. Tampilkan notifikasi sukses (pop-up)
+                    notification.classList.remove('hidden');
+
+                    // 2. Hilangkan notifikasi setelah 3 detik (3000 ms)
+                    setTimeout(() => {
+                        notification.classList.add('hidden');
+                    }, 3000);
+
+                    // 3. Reset Formulir (simulasi pengiriman data berhasil)
+                    reviewTextarea.value = '';
+                    
+                    // Reset rating
+                    if (document.getElementById("star-rating")) {
+                        currentRating = 0; 
+                        updateStars(0); 
+                    }
+
+                    console.log(`[SIMULASI] Data terkirim. Rating: ${ratingValue}, Ulasan: ${reviewContent}`);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
