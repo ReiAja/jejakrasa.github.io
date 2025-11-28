@@ -12,7 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome untuk icon menu -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body class="bg-gray-100">
 
@@ -92,6 +93,8 @@
                     <option value="Jawa Tengah">Jawa Tengah</option>
                     <option value="Sumatera Barat">Sumatera Barat</option>
                     <option value="Bali">Bali</option>
+                    <option value="Madiun">Madiun</option>
+                    <option value="Jawa Timur">Jawa Timur</option>
                 </select>
 
                 <button id="filterBtn" class="submit-btn">Tampilkan Hasil</button>
@@ -176,5 +179,16 @@
         window.location.href = url;
     }
     </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
 </body>
 </html>
