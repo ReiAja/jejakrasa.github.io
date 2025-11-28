@@ -28,28 +28,28 @@
                 image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
             },
              {
-                name: "Ayam Betutu",
+                name: "Nasi Padang",
                 category: "Makanan Utama",
-                region: "Bali",
-                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
+                region: "Sumatera Barat",
+                image: "https://awsimages.detik.net.id/community/media/visual/2020/07/06/nasi-padang.jpeg?w=600&q=90"
             },
              {
-                name: "Ayam Betutu",
-                category: "Makanan Utama",
-                region: "Bali",
-                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
+                name: "Brem",
+                category: "Camilan",
+                region: "Madiun",
+                image: "https://pialegong.id/wp-content/uploads/2023/08/Brem-Bali-Menyelami-Kelezatan-Fermentasi-Tradisional-Pulau-Dewata.jpg"
             },
              {
-                name: "Ayam Betutu",
-                category: "Makanan Utama",
-                region: "Bali",
-                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
+                name: "Kue Lumpur",
+                category: "Camilan",
+                region: "Jawa Timur",
+                image: "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/12/15094201/Ini-Resep-dan-Cara-Membuat-Kue-Lumpur-untuk-Camilan-di-Rumah.jpg.webp"
             },
              {
-                name: "Ayam Betutu",
-                category: "Makanan Utama",
-                region: "Bali",
-                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
+                name: "Klepon",
+                category: "Camilan",
+                region: "Jawa Timur",
+                image: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/259/2025/08/22/Desain-tanpa-judul-15-148619142.png"
             }
         ];
 
